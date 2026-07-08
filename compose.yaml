@@ -16,14 +16,12 @@ services:
             MYSQL_ROOT_PASSWORD: r00tp@ss!
             MYSQL_DATABASE: world
 
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin:latest
+    adminer:
+        image: adminer:latest
         ports:
-            - "8001:80"
+            - "8001:8080"
         environment:
-            PMA_HOST: db
-            PMA_USER: root
-            PMA_PASSWORD: r00tp@ss!
+            ADMINER_DEFAULT_SERVER: db
 
     # MYSQL_HOST - hostname of the database server
     # MYSQL_USER - user that accesses the database
